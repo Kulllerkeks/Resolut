@@ -32,7 +32,7 @@ end
 function resolut:Resize()
   self.window_width, self.window_height = love.graphics.getDimensions()
   self.ratio = math.min(self.window_width/self.original_width, self.window_height/self.original_height)
-  love.graphics.scale(self.ratio, self.ratio)
+  love.graphics.scale(self.rratio, self.ratio)
   --center camera window on screen
   local diffx = self.window_width - (self.original_width*self.ratio)
   local diffy = self.window_height - (self.original_height*self.ratio)
@@ -46,6 +46,7 @@ function resolut:Resize()
   self.screenOffsetY = diffy
   if self.gameraCam then
     self.gameraCam:setWindow(diffx,diffy,self.original_width*self.ratio,self.original_height*self.ratio)
+    self.gameraCam:setScale(self.window_width/self.original_width)
   end
 
   if debug then
