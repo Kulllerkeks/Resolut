@@ -1,5 +1,5 @@
 # Resolut
-A simple Lua module for easy resolution scaling.
+A simple free Lua module for easy resolution scaling.
 
 
 ## Usage

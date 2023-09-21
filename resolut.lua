@@ -1,5 +1,10 @@
---A module to scale the screenresolution with Gamera automatically 
---while preserving the original aspect ratio
+--[[
+  A module to scale the screenresolution with Gamera automatically 
+  while preserving the original aspect ratio
+  
+  this is free as in free of charge, do whatever you want with it.
+  Credit would me nice, show me what you are doing with the module! :)
+]]--
 require("love")
 
 local resolut = {
@@ -42,7 +47,7 @@ function resolut:Resize()
   if self.gameraCam then
     self.gameraCam:setWindow(diffx,diffy,self.original_width*self.ratio,self.original_height*self.ratio)
   end
-  
+
   if debug then
     print("window_width = " .. tostring(self.window_width))
     print("window_height = " .. tostring(self.window_height))
